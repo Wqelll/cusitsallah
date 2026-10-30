@@ -1,0 +1,158 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #040a07;
+    color: #f0f5f2;
+    font-family: 'Cairo', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.game-wrapper {
+    width: 100%;
+    max-width: 680px;
+    background: #0d1a14;
+    border: 2px solid #d4af37;
+    border-radius: 14px;
+    padding: 22px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.8);
+}
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    font-weight: 700;
+    color: #d4af37;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+    padding-bottom: 10px;
+    font-family: 'Amiri', serif;
+    font-size: 1.2rem;
+}
+
+.back-btn {
+    color: #8fa89b;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-family: 'Cairo', sans-serif;
+    transition: color 0.2s;
+}
+
+.back-btn:hover {
+    color: #d4af37;
+}
+
+/* Pixel Screen Window */
+#pixel-canvas-container {
+    width: 100%;
+    background-color: #020503;
+    border: 2px solid #1c3b2c;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 18px;
+    box-shadow: inset 0 4px 12px rgba(0,0,0,0.9);
+}
+
+canvas {
+    width: 100%;
+    height: auto;
+    display: block;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+/* Retro Dialogue Box */
+.dialogue-box {
+    background: #08140f;
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    border-radius: 10px;
+    padding: 20px;
+    min-height: 130px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+.speaker-name {
+    color: #d4af37;
+    font-family: 'Amiri', serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 6px;
+}
+
+.dialogue-text {
+    font-size: 1.1rem;
+    color: #e2ece6;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Action Buttons */
+.next-btn {
+    align-self: flex-end;
+    background: #143322;
+    color: #d4af37;
+    border: 1px solid #d4af37;
+    padding: 8px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'Cairo', sans-serif;
+    font-weight: 700;
+    transition: all 0.2s;
+}
+
+.next-btn:hover {
+    background: #1f4d34;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+}
+
+/* Yes / No Choices Container */
+.choices-hidden {
+    display: none;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.choice-btn {
+    flex: 1;
+    padding: 10px 20px;
+    font-family: 'Cairo', sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.1s, filter 0.2s;
+}
+
+.choice-btn:hover {
+    transform: scale(1.03);
+    filter: brightness(1.15);
+}
+
+.yes-btn {
+    background-color: #1b5e20;
+    color: #ffffff;
+    border: 1px solid #4caf50;
+}
+
+.no-btn {
+    background-color: #b71c1c;
+    color: #ffffff;
+    border: 1px solid #ef5350;
+}

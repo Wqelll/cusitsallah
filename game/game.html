@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لعبة مفيدة</title>
+    <!-- Retro Pixel Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="game.css">
+</head>
+<body>
+
+    <div class="game-wrapper">
+        <!-- Retro Pixel Screen Header -->
+        <div class="game-header">
+            <span>قصة تفاعلية مباركة</span>
+            <a href="../index.html" class="back-btn">العودة للموقع</a>
+        </div>
+
+        <!-- The Main Pixel Art Display Window -->
+        <div id="pixel-canvas-container">
+            <!-- Canvas where pixel art graphics will render -->
+            <canvas id="gameCanvas" width="600" height="350"></canvas>
+        </div>
+
+        <!-- Story & Dialogue Box Below -->
+        <div class="dialogue-box">
+            <div id="speaker-name" class="speaker-name">المتحدث</div>
+            <div id="dialogue-text" class="dialogue-text">جاري تحميل القصة...</div>
+            
+            <!-- Yes / No Choice Buttons Container -->
+            <div id="choices-container" class="choices-hidden">
+                <button id="btn-yes" class="choice-btn yes-btn" onclick="handleChoice('yes')">نعم</button>
+                <button id="btn-no" class="choice-btn no-btn" onclick="handleChoice('no')">لا</button>
+            </div>
+            
+            <!-- Continue Button for normal text -->
+            <button id="next-btn" class="next-btn" onclick="nextDialogue()">اضغط للمتابعة ◄</button>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>

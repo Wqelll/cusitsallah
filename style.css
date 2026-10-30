@@ -1,0 +1,568 @@
+:root {
+    --bg-primary: #060e0a;
+    --bg-card: #102119;
+    --gold-primary: #d4af37;
+    --gold-light: #f3dfa2;
+    --text-main: #f0f5f2;
+    --text-muted: #8fa89b;
+    --border-gold: rgba(212, 175, 55, 0.3);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden; /* Locks horizontal scrolling completely */
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    font-family: 'Cairo', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    /* Luxury Islamic Multi-Layered Gradient & Radial Glow */
+    background-image: 
+        radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.15) 0%, transparent 60%),
+        radial-gradient(circle at 50% 50%, rgba(10, 30, 20, 0) 40%, rgba(4, 10, 7, 0.8) 100%),
+        linear-gradient(135deg, #050b08 0%, #0e241b 50%, #040906 100%);
+    
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    padding: 45px 20px;
+    position: relative;
+}
+
+/* Subtle ambient background light decoration behind the header */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 800px;
+    height: 300px;
+    background: radial-gradient(ellipse at center, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Header Styling */
+header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.welcome-badge {
+    display: inline-block;
+    padding: 6px 20px;
+    background: rgba(212, 175, 55, 0.08);
+    border: 1px solid var(--border-gold);
+    border-radius: 30px;
+    color: var(--gold-primary);
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+header h1 {
+    font-family: 'Amiri', serif;
+    color: var(--gold-light);
+    font-size: 2.7rem;
+    font-weight: 700;
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
+}
+
+/* Main Layout Grid - Adapts from PC side-by-side to mobile stacked */
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 35px;
+    max-width: 1150px;
+    margin: 0 auto;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.content-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-gold);
+    border-radius: 14px;
+    padding: 22px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+.content-card:hover {
+    border-color: var(--gold-primary);
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.7);
+}
+
+.card-title {
+    font-family: 'Amiri', serif;
+    font-size: 1.5rem;
+    color: var(--gold-primary);
+    margin-bottom: 15px;
+    text-align: right;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+    padding-bottom: 8px;
+}
+
+/* Video Box Section */
+.video-section {
+    width: 540px;
+    max-width: 100%;
+}
+
+.video-frame {
+    width: 100%;
+    height: 310px;
+    background-color: #000;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: inset 0 2px 8px rgba(0,0,0,0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-frame video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Game Box Section & Animated Box */
+.game-section {
+    width: 380px;
+    max-width: 100%;
+}
+
+.game-animated-box {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 310px;
+    background-color: #030705;
+    border: 2px dashed rgba(212, 175, 55, 0.35);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease;
+    padding: 20px;
+    text-align: center;
+}
+
+.game-animated-box:hover {
+    border-color: var(--gold-primary);
+    background-color: #06100b;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.25);
+}
+
+.game-pulsing-text {
+    font-family: 'Amiri', serif;
+    font-size: 1.4rem;
+    color: var(--gold-light);
+    font-weight: 700;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+    animation: textPulse 2s infinite ease-in-out;
+}
+
+/* Pulsing Animation Keyframes */
+@keyframes textPulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.85;
+    }
+    50% {
+        transform: scale(1.06);
+        opacity: 1;
+        color: var(--gold-primary);
+        text-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.85;
+    }
+}
+
+/* Credits Footer */
+footer {
+    text-align: center;
+    margin-top: 50px;
+    border-top: 1px solid rgba(212, 175, 55, 0.15);
+    padding-top: 20px;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+footer .credit-line {
+    margin: 5px 0;
+}
+
+footer .credit-title {
+    color: var(--gold-primary);
+    font-weight: 700;
+}
+
+/* Responsive adjustments for Tablets, iPads, and Phones */
+@media (max-width: 900px) {
+    .main-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .video-section, .game-section {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    header h1 {
+        font-size: 2.1rem;
+    }
+}
+/* Top Navigation & Header Styling */
+.top-nav-wrapper {
+    background: var(--bg-card);
+    border: 1px solid var(--border-gold);
+    border-radius: 14px;
+    padding: 20px 25px;
+    max-width: 1150px;
+    margin: 30px auto 35px auto;
+    width: 90%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.top-nav-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.nav-title {
+    font-family: 'Amiri', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--gold-primary);
+}
+
+.tabs-nav-bar {
+    display: flex;
+    gap: 10px;
+}
+
+.tab-btn {
+    background: rgba(6, 14, 10, 0.6);
+    border: 1px solid var(--border-gold);
+    color: var(--text-muted);
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+    color: var(--gold-light);
+    border-color: var(--gold-primary);
+}
+
+.tab-btn.active {
+    background: var(--gold-primary);
+    color: #060e0a;
+    border-color: var(--gold-primary);
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+}
+
+/* Golden Divider Line */
+.golden-divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, var(--gold-primary) 50%, transparent 100%);
+    margin: 18px 0;
+    opacity: 0.6;
+}
+
+/* Scroll Box */
+.text-scroll-box {
+    max-height: 280px;
+    overflow-y: auto;
+    padding-right: 10px;
+    line-height: 1.8;
+}
+
+.text-scroll-box::-webkit-scrollbar {
+    width: 6px;
+}
+
+.text-scroll-box::-webkit-scrollbar-thumb {
+    background: var(--border-gold);
+    border-radius: 4px;
+}
+
+/* Notes Cards */
+.note-card {
+    background: rgba(6, 14, 10, 0.4);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 10px;
+}
+
+.note-head {
+    color: var(--gold-light);
+    font-family: 'Amiri', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.note-card ul {
+    list-style: none;
+    padding-right: 10px;
+}
+
+.note-card li {
+    color: var(--text-main);
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+    position: relative;
+    padding-right: 12px;
+}
+
+.note-card li::before {
+    content: "•";
+    color: var(--gold-primary);
+    position: absolute;
+    right: 0;
+}
+/* ==========================================
+   ✨ ULTRA-CLEAN NOTES & ANIMATION SYSTEM
+   ========================================== */
+
+/* أنيميشن دخول احترافي عند فتح الصفحة أو التنقل */
+@keyframes cleanFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(18px) scale(0.98);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.animate-entrance {
+    animation: cleanFadeIn 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Container Polish */
+.top-nav-wrapper {
+    background: linear-gradient(145deg, rgba(16, 35, 25, 0.85), rgba(6, 14, 10, 0.95));
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 16px;
+    padding: 24px 28px;
+    max-width: 1100px;
+    margin: 25px auto 35px auto;
+    width: 92%;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+}
+
+.top-nav-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.nav-title {
+    font-family: 'Amiri', serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #f3e5ab;
+    text-shadow: 0 2px 10px rgba(212, 175, 55, 0.2);
+}
+
+/* Modern Tab Buttons & Active Glowing Effect */
+.tabs-nav-bar {
+    display: flex;
+    gap: 12px;
+}
+
+.tab-btn {
+    background: rgba(6, 14, 10, 0.7);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    color: #c9d6cf;
+    padding: 9px 20px;
+    border-radius: 10px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: none; /* إزالة التوهج عن غير النشط */
+}
+
+.tab-btn:hover {
+    color: #ffffff;
+    border-color: #d4af37;
+    background: rgba(212, 175, 55, 0.15);
+    transform: translateY(-2px);
+}
+
+/* الزر النشط يتوهج ببريق ذهبي ساحر */
+.tab-btn.active {
+    background: linear-gradient(135deg, #d4af37, #aa820a);
+    color: #040907;
+    border-color: #ffd700;
+    box-shadow: 0 0 18px rgba(212, 175, 55, 0.6), 0 4px 12px rgba(0, 0, 0, 0.4);
+    transform: translateY(-1px);
+}
+
+/* Golden Glowing Separator */
+.golden-divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, #d4af37 50%, transparent 100%);
+    margin: 20px 0 24px 0;
+    opacity: 0.7;
+}
+
+/* Custom Smooth Scroll Box */
+.text-scroll-box {
+    max-height: 520px;
+    overflow-y: auto;
+    padding-left: 8px;
+    padding-right: 12px;
+}
+
+.text-scroll-box::-webkit-scrollbar {
+    width: 5px;
+}
+.text-scroll-box::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+.text-scroll-box::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #d4af37, #5c4710);
+    border-radius: 10px;
+}
+
+/* 🌟 ULTRA-CLEAN NOTE CARDS (10x Cleaner) */
+.note-card {
+    background: linear-gradient(145deg, rgba(12, 26, 19, 0.7), rgba(4, 10, 7, 0.8));
+    border: 1px solid rgba(212, 175, 55, 0.18);
+    border-right: 4px solid #d4af37; /* لمسة ذهبية أنيقة على اليمين */
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin-bottom: 16px;
+    transition: all 0.35s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.note-card:hover {
+    border-color: rgba(212, 175, 55, 0.5);
+    border-right-color: #ffe066;
+    transform: translateX(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(212, 175, 55, 0.1);
+}
+
+.note-head {
+    color: #fce892;
+    font-family: 'Amiri', serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    letter-spacing: 0.3px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.note-card ul {
+    list-style: none;
+    padding-right: 5px;
+    margin: 0;
+}
+
+.note-card li {
+    color: #e2ece7;
+    font-size: 0.98rem;
+    line-height: 1.85;
+    margin-bottom: 8px;
+    position: relative;
+    padding-right: 20px;
+}
+
+.note-card li:last-child {
+    margin-bottom: 0;
+}
+
+.note-card li::before {
+    content: "✦";
+    color: #d4af37;
+    font-size: 0.8rem;
+    position: absolute;
+    right: 0;
+    top: 2px;
+}
+
+.note-card strong {
+    color: #ffffff;
+    font-weight: 700;
+}
+/* ==========================================
+   ✨ NAV LOGO & BRAND STYLING
+   ========================================== */
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.nav-logo {
+    width: 93px;
+    height: 93px;
+    object-fit: contain;
+    border-radius: 50%;
+    filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.4));
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.4s ease;
+}
+
+.nav-logo:hover {
+    transform: scale(1.1) rotate(5deg);
+    filter: drop-shadow(0 0 14px rgba(212, 175, 55, 0.8));
+}
+
+.nav-title {
+    font-family: 'Amiri', serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #f3e5ab;
+    text-shadow: 0 2px 10px rgba(212, 175, 55, 0.2);
+}
